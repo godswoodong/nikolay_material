@@ -11,7 +11,6 @@ import pythonwhois
 
 domain_name = [line.rstrip('\n') for line in open('domain.csv')]
 
-
 data = []
 
 def json_fallback(obj):
@@ -31,7 +30,6 @@ for domain in domain_name:
 
 f = csv.writer(open("result_test.csv","wb+")) 
 f. writerow(keys)
-print(len(data))
 for x in data:
 	f.writerow([x["status"],
 	    x["updated_date"],
@@ -42,4 +40,3 @@ for x in data:
 	    x["raw"],
 	    x["whois_server"],
 	    x["registrar"]])
-f.close()
